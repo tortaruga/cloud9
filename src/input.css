@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+html {
+    scroll-behavior: smooth; 
+} 
+
+.destination {
+    transition: .4s;
+    flex: 1;
+}
+
+.destination:hover {
+    flex: 5;
+}
+
+.gallery:hover .destination {
+    filter: brightness(.5); 
+    pointer-events: auto; 
+}
+
+.gallery:hover .destination:hover {
+    filter: brightness(1.2);
+}
+
+.destination:hover p { 
+    animation: destinations .4s forwards;  
+}  
+
+::-webkit-scrollbar {
+    width: 15px;   
+    height: 5px;   
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: #50265f52;
+    border-radius: 6px;
+} 
+
+.img {
+    animation: float 2.5s infinite alternate;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(.75rem);  
+    }
+}
+
+@keyframes destinations {
+    50% {
+        transform: rotate(-7deg) scale(1);
+    }
+
+    80% {
+        transform: rotate(4deg) scale(1.1); 
+    } 
+
+    100% { 
+        transform: rotate(-3deg) scale(1.3);
+    }  
+}
